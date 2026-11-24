@@ -8,7 +8,7 @@ describe('TasksService', () => {
     service = new TasksService();
   });
 
-  it('creates a task with trimmed title and done=false', () => {
+  it('1. creates a task with trimmed title and done=false', () => {
     const task = service.create('  Настроить CI для сервера  ');
 
     expect(task).toEqual({
@@ -19,11 +19,11 @@ describe('TasksService', () => {
     expect(service.findAll()).toHaveLength(1);
   });
 
-  it('throws on empty title', () => {
+  it('2. throws on empty title', () => {
     expect(() => service.create('   ')).toThrow('Title cannot be empty');
   });
 
-  it('toggles task completion status', () => {
+  it('3. toggles task completion status', () => {
     const task = service.create('Проверить Jest');
     expect(task.done).toBe(false);
 
@@ -31,7 +31,7 @@ describe('TasksService', () => {
     expect(toggled?.done).toBe(true);
   });
 
-  it('returns null when toggling non-existent task', () => {
+  it('4. returns null when toggling non-existent task', () => {
     expect(service.toggle(999)).toBeNull();
   });
 });

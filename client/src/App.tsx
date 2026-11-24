@@ -39,7 +39,7 @@ export function App() {
         <input
           value={title}
           onChange={(e) => setTitle(e.target.value)}
-          placeholder="Новая задача"
+          placeholder="Новая задача проекта"
         />
         <button type="submit">Добавить</button>
       </form>
