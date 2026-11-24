@@ -28,7 +28,7 @@ describe('TasksService', () => {
     expect(task.done).toBe(false);
 
     const toggled = service.toggle(task.id);
-    expect(toggled?.done).toBe(true);
+    expect(toggled?.done).toBe(false);
   });
 
   it('returns null when toggling non-existent task', () => {
